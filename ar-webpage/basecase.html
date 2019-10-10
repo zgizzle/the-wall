@@ -1,0 +1,39 @@
+<!--HIRO MARKER IMAGE https://jeromeetienne.github.io/AR.js/data/images/HIRO.jpg -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A frame scene... for the wall (hopefully)</title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <!-- Next, include three.ar.js; add the speech recognition polyfill if you want. -->
+    <script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
+    <!-- Last, include aframe-ar. -->
+    <script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
+    <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+    <script src="node_modules/aframe-draw-component/dist/aframe-draw-component.js"></script>
+    <script src="node_modules/aframe-textwrap-component/dist/aframe-textwrap-component.js"></script>
+    <script src="https://unpkg.com/aframe-click-drag-component/dist/aframe-click-drag-component.min.js"></script>
+    <script>
+    registerAframeClickDragComponent(window.AFRAME);
+    </script>
+    <script var AFRAME = require("aframe-core");
+            var draw = require("aframe-draw-component").component;
+            var textwrap = require("aframe-textwrap-component").component;
+            AFRAME.registerComponent("draw", draw);
+            AFRAME.registerComponent("textwrap", textwrap);>
+    </script>
+  </head>
+
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene cursor="rayOrigin:mouse">
+      <a-assets>
+        <img id="bricks" src="bricks.jpg" />
+        <img id="papier" src="paper.jpg" />
+      </a-assets>
+      <a-marker preset="hiro">
+        <a-sphere click-drag position="0 1.25 1" radius="1.25" color="#EF2D5E"></a-sphere>
+      </a-marker>
+      <a-camera look-controls-enabled="false"></a-camera>
+    </a-scene>
+  </body>
+</html>

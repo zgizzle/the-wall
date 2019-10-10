@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact V16</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Load the jQuery library, which we'll use to manipulate HTML elements with Javascript. -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+    <!-- Load the Firebase library before loading the body. -->
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="modernizr.js" type="text/javascript"></script>
+
+    <!--===============================================================================================-->
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="stickystyles.css" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/iconic/css/material-design-iconic-font.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/css-hamburgers/hamburgers.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/animsition/css/animsition.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/select2/select2.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/daterangepicker/daterangepicker.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    <div class="bg-container-contact100">
+      <ul class="notes">
+        <li>
+          <a href="#">
+            <h2>Welcome to the Smart Wall</h2>
+            <p>
+              The Smart Wall lets you post a note on a virtual wall that can be
+              viewed using Augmented Reality. When you post to The Smart Wall we
+              will use machine learning to analyse the sentiment of everything
+              posted on the wall. This mood will be shown on the website
+              dashboard. Treat the Smart Wall wall as a public place. Your posts
+              will be visible to others with access to the Smart Wall using
+              augmented reality. Your post will be reviewed before it goes live
+              check the moderation policy (link to moderation policy) before you
+              post.
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h2>About The Smart Wall</h2>
+            <p>
+              The Smart Wall is a project of postgraduate students in the 3A
+              Institute Masters Courses in the College of Engineering and
+              Computer Science at Australian National University. We are
+              conducting research as part of our coursework (CECS8001), where
+              our aim is to better understand how to create, maintain, and
+              govern cyber-physical systems (a type of technological system). We
+              do this by researching systems that already exist, and by building
+              new systems. The Primary Investigator leading this project is
+              Distinguished Professor Genevieve Bell, Director of the 3A
+              Institute.
+            </p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h2>Data Usage</h2>
+            <p>
+              You do not need to register to use The Smart Wall. The only data
+              that will be stored is the content of the message, the colour you
+              select for the note, the date the note was posted and how long you
+              want the message to stay on the wall.
+            </p>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <h2>Contact Us</h2>
+            <p>
+              We would appreciate any suggestions or feedback you have about
+              using the Smart Wall, the website and the augmented reality.
+            </p>
+          </a>
+        </li>
+      </ul>
+      <div>
+        <button class="btn-show-contact100 ">
+          Write a Message on The Wall
+        </button>
+      </div>
+      <div class="contact100-header flex-sb-m">
+        <a href="#" class="contact100-header-logo">
+          <img src="" />
+        </a>
+      </div>
+    </div>
+
+    <ul class="cb-slideshow">
+      <li>
+        <span>Image 01</span>
+      </li>
+      <li><span>Image 02</span></li>
+      <li><span>Image 03</span></li>
+      <li><span>Image 04</span></li>
+      <li><span>Image 05</span></li>
+      <li><span>Image 06</span></li>
+    </ul>
+
+    <!-- INSERT THE WRITING ON THE WALL HERE-->
+
+    <div class="container-contact100" style="display:none">
+      <div class="wrap-contact100">
+        <button class="btn-hide-contact100">
+          <i class="zmdi zmdi-close"></i>
+        </button>
+
+        <div
+          class="contact100-form-title"
+          style="background-image: url(images/bricks.jpg);"
+        >
+          <span>Write a Message </span>
+        </div>
+
+        <form id="form" class="contact100-form validate-form">
+          <div class="wrap-input100 validate-input">
+            <textarea
+              id="message"
+              class="input100"
+              name="message"
+              placeholder="Your message..."
+            ></textarea>
+            <span class="focus-input100"></span>
+            <label class="label-input100 rs1" for="message">
+              <span class="lnr lnr-bubble"></span>
+            </label>
+          </div>
+          <div class="wrap-input100 validate-input">
+            <input
+              id="noteDays"
+              class="input100"
+              type="number"
+              name="noteDays"
+              placeholder="# of days to display message ..."
+            />
+            <span class="focus-input100"></span>
+            <label class="label-input100" for="name">
+              <span class="lnr lnr-calendar-full m-b-2"></span>
+            </label>
+          </div>
+          <div class="wrap-input100">
+            <input
+              id="noteColour"
+              class="input100"
+              type="color"
+              name="noteColour"
+              placeholder=""
+              value="#ffff88"
+            />
+
+            <span class="focus-input100"></span>
+            <label class="label-input100" for="email">
+              <span class="lnr lnr-magic-wand m-b-5"></span>
+            </label>
+          </div>
+
+          <div class="container-contact100-form-btn">
+            <button class="contact100-form-btn">
+              Post It!
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/daterangepicker/moment.min.js"></script>
+    <script src="vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+
+    <script src="js/config.js"></script>
+    <script src="js/application.js"></script>
+  </body>
+</html>
