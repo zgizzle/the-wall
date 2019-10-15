@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: arial, sans-serif;
+  font-size: 100%;
+  margin: 1.2em;
+  /*background: #666;*/
+  background-image: url("bricks.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+h2,
+p {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul li h2 {
+  font-size: 140%;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+ul li p {
+  font-family: "Reenie Beanie", arial, sans-serif;
+  font-size: 170%;
+}
+ul,
+li {
+  list-style: none;
+}
+ul {
+  overflow: hidden;
+  padding: 1em;
+}
+
+ul li {
+  margin: 0.5em;
+  float: left;
+}
+
+ul li a {
+  text-decoration: none;
+  /*color: rgb(255, 255, 255);*/
+  /*background: #ffc;*/
+  display: block;
+  height: 12em;
+  width: 12em;
+  padding: 0.8em;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  transition: -moz-transform 0.15s linear;
+}
+
+ul li:nth-child(even) a {
+  transform: rotate(4deg);
+  position: relative;
+  top: 5px;
+}
+
+ul li:nth-child(3n) a {
+  transform: rotate(-3deg);
+  position: relative;
+  top: -5px;
+}
+
+ul li:nth-child(7) a {
+  transform: rotate(-7deg);
+  position: relative;
+  top: -5px;
+}
+
+ul li:nth-child(5n) a {
+  transform: rotate(5deg);
+  position: relative;
+  top: -10px;
+}
+
+ul li:nth-child(13) a {
+  transform: rotate(5deg);
+  position: relative;
+  top: -10px;
+}
+
+ul li a:hover {
+  -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position: relative;
+  z-index: 5;
+}
+
+ul li a:focus {
+  -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  transform: scale(1.25);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position: relative;
+  z-index: 5;
+}
