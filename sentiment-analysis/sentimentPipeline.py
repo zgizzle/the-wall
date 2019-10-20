@@ -63,7 +63,7 @@ def sentiment_to_colour(number):
     cmap = cmocean.cm.thermal
     colour = cmap(value)
     rgb = [i * 255 for i in colour]
-    rgb = [10 if x < 10 else x for x in rgb]
+    rgb = [10 if x < 10 else int(round(x)) for x in rgb]
 
     db.child("colours").child("red").set(rgb[0])
     db.child("colours").child("green").set(rgb[1])
