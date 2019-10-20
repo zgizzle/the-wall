@@ -62,8 +62,13 @@ def sentiment_to_colour(number):
     value = (number + 1) / 2
     cmap = cmocean.cm.thermal
     colour = cmap(value)
-    rgb = colour[:3]  # will return rgba, we take only first 3 so we get rgb
-    return matplotlib.colors.rgb2hex(rgb)
+    rgb = [i * 255 for i in colour]
+    rgb = [10 if x < 10 else x for x in rgb]
+
+    db.child("colours").child("red").set(rgb[0])
+    db.child("colours").child("green").set(rgb[1])
+    db.child("colours").child("blue").set(rgb[2])
+    return rgb
 
 
 ########################################################################
@@ -73,5 +78,4 @@ while True:
     average_sentiment = average_list_sentiment(comment_list, flair_sentiment)
     colour = sentiment_to_colour(average_sentiment)
     print(colour)
-    db.child("thecolour").set(colour)
     time.sleep(5)
